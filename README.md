@@ -2,13 +2,6 @@
 
 This project aims to create a movie recommendation system using the content-based approach. Given a user's favorite movie, the system recommends similar movies based on the movie's attributes.
 
-# Table of Contents
-
-1. Technologies
-2. Dataset
-3. Feature Selection
-4. Recommendation System
-5. Technologies
 
 # This project uses the following libraries:
 
@@ -16,19 +9,36 @@ This project aims to create a movie recommendation system using the content-base
  2. Python
  3. difflib
  4. Scikit-learn
+ 5. Streamlit
+ 6. FastAPI
+ 7. Requests
+ 8. BeautifulSoup
+ 9. Matplotlib
+ 10. Seaborn
 
 # Dataset
-The dataset used in this project is the MovieLens Latest Full Dataset. It contains over 27,000 movies, 46,000 tags, and 26 million ratings.
+The dataset was scrapped from IMDb website using requests and beautifulSoup. Dataset was cleaned using regular expression and Pandas. 
 
 # Feature Selection
 The system uses the following attributes to recommend similar movies:
 
-Genres
-Keywords
-Tagline
-Cast
+Genre
 Director
-The missing values in the dataset are replaced with empty strings.
+Stars
+Rating
+Year
+Description
+
+# Data Visualization
+
+Before performing feature selection, some data visualization was done to gain insights into the dataset. 
+The following plots were generated:
+
+Scatter plot of votes versus rating
+Distribution plot of ratings
+Bar plot of top 10 highest grossing movies
+Scatter plot of metascores versus ratings
+Bar plot of movie certificates
 
 # Recommendation System
 
@@ -41,4 +51,12 @@ The recommendation system works in the following way:
 5. Find the closest match for the input movie name in the dataset.
 6. Display the top 20 most similar movies and their similarity scores.
 7. To run the code, open it in an environment that supports Python and the required libraries. Make sure to have the movies.csv file in the same directory as the code file. The user will be prompted to enter their favorite movie name to receive movie recommendations.
+
+# Recommendations
+
+To generate recommendations, the user is prompted to enter the name of a movie. The system then finds the closest match to the movie title in the dataset using the get_close_matches function from the difflib module. The cosine similarity scores between the selected movie and all other movies in the dataset are then calculated. The top 12 movies with the highest similarity scores are selected and their posters are displayed.
+
+# Credits
+
+The dataset used in this project was obtained from the IMDb website.
 
